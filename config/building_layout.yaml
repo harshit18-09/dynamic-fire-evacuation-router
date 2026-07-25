@@ -1,0 +1,107 @@
+building_name: "Demo Office"
+zones:
+  - id: "lobby"
+    type: "lobby"
+    capacity: 40
+    is_exit: false
+    sensor_id: "s1"
+    neighbors:
+      - target: "main_exit"
+        cost: 2.0        #taking some random cost for each path based on length and congestion
+      - target: "ground_hallway"
+        cost: 1.5
+
+  - id: "main_exit"
+    type: "exit"
+    capacity: 100
+    is_exit: true
+    sensor_id: "s2"
+    neighbors:
+      - target: "lobby"
+        cost: 2.0
+
+  - id: "ground_hallway"
+    type: "corridor"
+    capacity: 30
+    is_exit: false
+    sensor_id: "s3"
+    neighbors:
+      - target: "lobby"
+        cost: 1.5
+      - target: "office_a"
+        cost: 1.0
+      - target: "office_b"
+        cost: 1.0
+      - target: "stairwell"
+        cost: 2.5    
+
+  - id: "office_a"
+    type: "office"
+    capacity: 10
+    is_exit: false
+    sensor_id: "s4"
+    neighbors:
+      - target: "ground_hallway"
+        cost: 1.0
+
+  - id: "office_b"
+    type: "office"
+    capacity: 12
+    is_exit: false
+    sensor_id: "s5"
+    neighbors:
+      - target: "ground_hallway"
+        cost: 1.0
+
+  - id: "stairwell"
+    type: "stairwell"
+    capacity: 20
+    is_exit: false
+    sensor_id: "s6"
+    neighbors:
+      - target: "ground_hallway"
+        cost: 2.5
+      - target: "upper_hallway"
+        cost: 4.0    #Climbing stairs costs more energy (higher base cost)
+
+  - id: "upper_hallway"
+    type: "corridor"
+    capacity: 25
+    is_exit: false
+    sensor_id: "s7"
+    neighbors:
+      - target: "stairwell"
+        cost: 4.0
+      - target: "office_c"
+        cost: 1.0
+      - target: "office_d"
+        cost: 1.2
+      - target: "fire_exit"
+        cost: 3.0    
+
+  - id: "office_c"
+    type: "office"
+    capacity: 8
+    is_exit: false
+    sensor_id: "s8"
+    neighbors:
+      - target: "upper_hallway"
+        cost: 1.0
+
+  - id: "office_d"
+    type: "office"
+    capacity: 15
+    is_exit: false
+    sensor_id: "s9"
+    neighbors:
+      - target: "upper_hallway"
+        cost: 1.2
+
+  - id: "fire_exit"
+    type: "exit"
+    capacity: 80
+    is_exit: true
+    sensor_id: "s10"
+    neighbors:
+      - target: "upper_hallway"
+        cost: 3.0
