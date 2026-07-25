@@ -1,0 +1,32 @@
+zones:
+  - id: "fire_exit"
+    fire_type: "flashover"
+    start_time: 5.0
+    peak_temp: 400
+    peak_smoke: 2000
+    flame_probability: 1.0
+    growth_rate: 0.8
+
+  - id: "stairwell"
+    fire_type: "flashover"
+    start_time: 15.0
+    peak_temp: 350
+    peak_smoke: 1800
+    flame_probability: 0.95
+    growth_rate: 0.6
+
+  - id: "office_a"
+    fire_type: "smoldering"
+    start_time: 25.0
+    peak_temp: 120
+    peak_smoke: 400
+    flame_probability: 0.2
+    growth_rate: 0.05
+
+  - id: "office_d"
+    fire_type: "smoldering"
+    start_time: 30.0
+    peak_temp: 100
+    peak_smoke: 350
+    flame_probability: 0.1
+    growth_rate: 0.04
