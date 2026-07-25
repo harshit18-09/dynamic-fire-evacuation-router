@@ -1,6 +1,4 @@
-# Default scenario: Flashover in the stairwell
-# This file is auto-generated for demo purposes.
-
+#Default scenario: Flashover in the stairwell
 zones:
   - id: "stairwell"
     fire_type: "flashover"
