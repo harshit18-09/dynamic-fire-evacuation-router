@@ -37,7 +37,7 @@ class FirmwareNode:
         self.actuators: Dict[str, ZoneActuatorState] = {
             zid: ZoneActuatorState() for zid in zone_ids
         }
-        self.source_zone = "office_c"   # default
+        self.source_zone = "office_c"   
         self.last_path = []
         self.last_exit = None
         self.current_hazard_scores = {}
@@ -89,7 +89,7 @@ class FirmwareNode:
                     state.led_direction = f"→ EXIT ({exit_node})"
             else:
                 if state.led_color == LEDState.DANGER:
-                    state.led_direction = "⚠️ STAY AWAY"
+                    state.led_direction = "STAY AWAY"
                 else:
                     state.led_direction = "↺"
 
